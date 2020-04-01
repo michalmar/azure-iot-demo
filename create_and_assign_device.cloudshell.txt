@@ -1,0 +1,35 @@
+michal@Azure:~$ az extension add --name azure-cli-iot-ext
+michal@Azure:~$ az iot hub device-identity create --hub-name mma-demo-iothub --device-id MyDotnetDevice
+{
+  "authentication": {
+    "symmetricKey": {
+      "primaryKey": "/5XI3FebxopCsbDiQ7v9Y3KHNBdkKyMgPdd9gmTZcbE=",
+      "secondaryKey": "aaUggWKQNS1L5cR6eD64dshfXWSZ8GHpMH0xbKXeNHo="
+    },
+    "type": "sas",
+    "x509Thumbprint": {
+      "primaryThumbprint": null,
+      "secondaryThumbprint": null
+    }
+  },
+  "capabilities": {
+    "iotEdge": false
+  },
+  "cloudToDeviceMessageCount": 0,
+  "connectionState": "Disconnected",
+  "connectionStateUpdatedTime": "0001-01-01T00:00:00",
+  "deviceId": "MyDotnetDevice",
+  "deviceScope": null,
+  "etag": "NTAzNzI5MTc2",
+  "generationId": "637212789334938098",
+  "lastActivityTime": "0001-01-01T00:00:00",
+  "status": "enabled",
+  "statusReason": null,
+  "statusUpdatedTime": "0001-01-01T00:00:00"
+}
+
+michal@Azure:~$ az iot hub device-identity show-connection-string --hub-name mma-demo-iothub --device-id MyDotnetDevice --output table
+ConnectionString
+-------------------------------------------------------------------------------------------------------------------------------
+HostName=mma-demo-iothub.azure-devices.net;DeviceId=MyDotnetDevice;SharedAccessKey=/5XI3FebxopCsbDiQ7v9Y3KHNBdkKyMgPdd9gmTZcbE=
+michal@Azure:~$
