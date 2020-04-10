@@ -1,6 +1,14 @@
 # azure-iot-demo
 
-## .NET make application (exe)
+
+This demo consists of two parts:
+## 1. Message Generator
+## 2. Stream Analytics Custom Deserializer
+
+
+## 1. Message Generator
+
+### .NET make application (exe)
 
 Win
 `dotnet publish -c Release -r win10-x64`
@@ -9,7 +17,8 @@ Linux
 `dotnet publish -c Release -r ubuntu.16.10-x64`
 
 
-## SQL Sample
+**SQL Sample**
+Used for processing messages
 ```SQL
 
 SELECT
@@ -36,3 +45,5 @@ GROUP BY
     TUMBLINGWINDOW(second,5)
 
 ```
+
+## 2. Stream Analytics Custom Deserializer
