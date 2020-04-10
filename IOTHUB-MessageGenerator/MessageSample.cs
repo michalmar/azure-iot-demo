@@ -10,7 +10,7 @@ namespace Microsoft.Azure.Devices.Client.Samples
 {
     public class MessageSample
     {
-        private const int MessageCount = 10;
+        private const int MessageCount = 10 ;
         private const int TemperatureThreshold = 30;
         private static Random s_randomGenerator = new Random();
         private float _temperature;
@@ -24,8 +24,10 @@ namespace Microsoft.Azure.Devices.Client.Samples
 
         public async Task RunSampleAsync()
         {
+            // string dataBuffer = $"{{\"class\": \"TPV\", \"device\": \"/dev/ttyS{s_randomGenerator.Next(0,3)}\", \"mode\": 3, \"time\": \"2020-03-31T13:32:11.299Z\", \"lat\":{s_randomGenerator.Next(60, 61)+s_randomGenerator.NextDouble()}, \"lon\": {s_randomGenerator.Next(24, 25)+s_randomGenerator.NextDouble()}, \"altMSL\": {s_randomGenerator.Next(33, 36)+s_randomGenerator.NextDouble()}, \"eph\": {s_randomGenerator.NextDouble()/10000}, \"epv\": {1+s_randomGenerator.NextDouble()}, \"eps\": {s_randomGenerator.NextDouble()}, \"track\": {s_randomGenerator.Next(324, 326)+s_randomGenerator.NextDouble()}, \"speed\": {s_randomGenerator.Next(5,50)+s_randomGenerator.NextDouble()}, \"climb\": {s_randomGenerator.Next(-1, +1)+s_randomGenerator.NextDouble()}, \"pDOP\": {s_randomGenerator.Next(1, 2)+s_randomGenerator.NextDouble()}}}";
+            // Console.WriteLine("DBG: Device sending {0} ...\n", dataBuffer);
             await SendEventAsync().ConfigureAwait(false);
-            await ReceiveMessagesAsync().ConfigureAwait(false);
+            // await ReceiveMessagesAsync().ConfigureAwait(false);
         }
 
         private async Task SendEventAsync()
