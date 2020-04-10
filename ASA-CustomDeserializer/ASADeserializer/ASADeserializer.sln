@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASADeserializer", "ASADeserializer.csproj", "{77591C22-22DE-42C9-8DFD-F4C7DD55E75E}"
+EndProject
+Project("{E6C563F2-BDC2-4A24-ACBF-01715157DCBB}") = "ASACloudDeserializerApplication", "..\ASACloudDeserializerApplication\ASACloudDeserializerApplication.asaproj", "{815F81C2-6498-4C97-A9E4-B56BAC7F7A29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77591C22-22DE-42C9-8DFD-F4C7DD55E75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77591C22-22DE-42C9-8DFD-F4C7DD55E75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77591C22-22DE-42C9-8DFD-F4C7DD55E75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77591C22-22DE-42C9-8DFD-F4C7DD55E75E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{815F81C2-6498-4C97-A9E4-B56BAC7F7A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{815F81C2-6498-4C97-A9E4-B56BAC7F7A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{815F81C2-6498-4C97-A9E4-B56BAC7F7A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{815F81C2-6498-4C97-A9E4-B56BAC7F7A29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EE12A51-1F19-434B-AA81-FB777B75FF15}
+	EndGlobalSection
+EndGlobal

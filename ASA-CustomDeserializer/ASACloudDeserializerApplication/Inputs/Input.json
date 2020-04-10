@@ -1,0 +1,30 @@
+﻿{
+  "Sample": null,
+  "EventHubProperties": null,
+  "BlobStorageProperties": null,
+  "IoTHubProperties": {
+    "ConsumerGroupName": "$Default",
+    "IotHubNamespace": "mma-demo-iothub",
+    "SharedAccessPolicyKey": null,
+    "SharedAccessPolicyName": "iothubowner",
+    "EndPoint": "messages/events"
+  },
+  "BlobReferenceProperties": null,
+  "SqlReferenceInputInfo": null,
+  "InputPartionKey": null,
+  "DataSourceCredentialDomain": "5cfd2bd6-178f-4527-a06b-4b1ca3b3a169.StreamAnalyticsCredential",
+  "Name": "Input",
+  "Type": "Data Stream",
+  "DataSourceType": "IoT Hub",
+  "Serialization": {
+    "Encoding": null,
+    "Type": "CustomClr",
+    "FieldDelimiter": null,
+    "Format": null,
+    "SerializationDllPath": "ASADeserializer.dll",
+    "SerializationClassName": "ASADeserializer.MessageBodyDeserializer",
+    "SerializationDllPathInLocal": "..\\..\\ASADeserializer\\bin\\Debug\\netstandard2.0\\ASADeserializer.dll"
+  },
+  "CompresssionType": "None",
+  "ScriptType": "Input"
+}

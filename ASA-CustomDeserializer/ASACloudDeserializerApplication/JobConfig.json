@@ -1,0 +1,20 @@
+﻿{
+  "DataLocale": "en-US",
+  "OutputErrorPolicy": "Drop",
+  "EventsLateArrivalMaxDelayInSeconds": 5,
+  "EventsOutOfOrderMaxDelayInSeconds": 0,
+  "EventsOutOfOrderPolicy": "Adjust",
+  "StreamingUnits": 3,
+  "CompatibilityLevel": "1.2",
+  "UseSystemAssignedIdentity": false,
+  "GlobalStorageAccountName": "iotdemoraw",
+  "GlobalStorageAccountKey": null,
+  "AccountName": "iotdemoraw",
+  "AccountKey": null,
+  "ContainerName": "deserializer",
+  "Path": "UserCustomCode.zip",
+  "UploadFromLocal": true,
+  "DataSourceCredentialDomain": "0a4d76d7-5e6f-43d6-bafc-4220320f865f.StreamAnalyticsCredential",
+  "Tags": {},
+  "ScriptType": "JobConfig"
+}

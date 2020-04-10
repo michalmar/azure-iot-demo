@@ -1,0 +1,11 @@
+﻿{
+  "InputAlias": "Input",
+  "Type": "Data Stream",
+  "Format": "CustomClr",
+  "FilePath": "..\\..\\..\\..\\Desktop\\demo-job-ehub2.txt",
+  "SerializationDllPath": "ASADeserializer.dll",
+  "SerializationClassName": "ASADeserializer.MessageBodyDeserializer",
+  "SerializationDllPathInLocal": "..\\..\\ASADeserializer\\bin\\Debug\\netstandard2.0\\ASADeserializer.dll",
+  "Sample": null,
+  "ScriptType": "InputMock"
+}
