@@ -1,8 +1,8 @@
 ﻿{
   "EventHubProperties": {
-    "EventHubName": "eh07",
+    "EventHubName": "hubpremis04",
     "PartitionKey": null,
-    "ServiceBusNamespace": "mma-demo-eventhubs",
+    "ServiceBusNamespace": "skoweuehpremis01",
     "SharedAccessPolicyKey": null,
     "SharedAccessPolicyName": "RootManageSharedAccessKey",
     "PropertyColumns": []

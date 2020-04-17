@@ -2,7 +2,7 @@
   "InputAlias": "Input",
   "Type": "Data Stream",
   "Format": "CustomClr",
-  "FilePath": "..\\..\\..\\..\\Desktop\\demo-job-ehub2.txt",
+  "FilePath": "..\\ASALocalRun\\2020-04-17-15-38-25\\xxx.out.txt",
   "SerializationDllPath": "ASADeserializer.dll",
   "SerializationClassName": "ASADeserializer.MessageBodyDeserializer",
   "SerializationDllPathInLocal": "..\\..\\ASADeserializer\\bin\\Debug\\netstandard2.0\\ASADeserializer.dll",

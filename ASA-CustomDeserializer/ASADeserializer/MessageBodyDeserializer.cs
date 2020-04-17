@@ -14,6 +14,8 @@ using System.IO;
 
 using Microsoft.Azure.StreamAnalytics;
 using Microsoft.Azure.StreamAnalytics.Serialization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 using Newtonsoft.Json.Linq;
 
@@ -33,6 +35,7 @@ namespace ASADeserializer
 
         public override IEnumerable<CustomEvent> Deserialize(Stream stream)
         {
+            //File.WriteAllText("xxx.out.txt","xxx");
             bool err = false;
             using (var sr = new StreamReader(stream))
             {
@@ -42,42 +45,27 @@ namespace ASADeserializer
                 {
                     if (line.Length > 0 && !string.IsNullOrWhiteSpace(line))
                     {
-                        JObject json = JObject.Parse(line);
 
+                        //var input = @"""{\""a\"":1}""";
+                        //var input = @"""{\""class\"": \""TPV\"", \""device\"": \""/dev/ttyS0\"", \""mode\"": 3}""";
+                        var input = line;
+                        //File.AppendAllText("xxx.out.txt", line);
+                        var val = System.Text.Json.JsonDocument.Parse(input).RootElement.ToString();                 
+                        var jsonevent = JsonSerializer.Deserialize<CustomEvent>(val);
+ 
                         if (err)
                         {
                             //handle error.
                             streamingDiagnostics.WriteError("Did not get expected number of columns", $"Invalid line: {line}");
                         }
 
-                        // create a new CustomEvent object 
-                        yield return new CustomEvent()
-                        {
-                            c_class = (string)json["class"],
-                            c_device = (string)json["device"],
-                            c_mode = (int)json["mode"],
-                            c_time = (string)json["time"],
-                            c_lat = (double)json["lat"],
-                            c_lon = (double)json["lon"],
-                            c_altMSL = (double)json["altMSL"],
-                            c_eph = (double)json["eph"],
-                            c_epv = (double)json["epv"],
-                            c_eps = (double)json["eps"],
-                            c_track = (double)json["track"],
-                            c_speed = (double)json["speed"],
-                            c_climb = (double)json["climb"],
-                            c_pDOP = (double)json["pDOP"]
-
-                        };
-
+                        yield return jsonevent;
                     }
                     line = sr.ReadLine();
                 }
 
             }
         }
-    
-
     }
 
 
@@ -111,20 +99,24 @@ namespace ASADeserializer
     */
     public class CustomEvent
     {
+        [JsonPropertyName("class")]
         public string c_class { get; set; }
-        public string c_device { get; set; }
-        public int c_mode { get; set; }
-        public string c_time { get; set; }
-        public double c_lat { get; set; }
-        public double c_lon { get; set; }
-        public double c_altMSL { get; set; }
-        public double c_eph { get; set; }
-        public double c_epv { get; set; }
-        public double c_eps { get; set; }
-        public double c_track { get; set; }
-        public double c_speed { get; set; }
-        public double c_climb { get; set; }
-        public double c_pDOP { get; set; }
+        public string device { get; set; }
+        public int mode { get; set; }
+        
+        public string time { get; set; }
+        public double lat { get; set; }
+        public double lon { get; set; }
+        public double altMSL { get; set; }
+        public double eph { get; set; }
+        public double epv { get; set; }
+        public double eps { get; set; }
+        public double track { get; set; }
+        public double speed { get; set; }
+        public double climb { get; set; }
+        public double pDOP { get; set; }
+        
+        
 
 
 
