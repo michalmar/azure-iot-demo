@@ -1,8 +1,8 @@
 ﻿{
-  "Sample": "\"{\\\"class\\\": \\\"TPV\\\", \\\"device\\\": \\\"/dev/ttyS0\\\", \\\"mode\\\": 3, \\\"time\\\": \\\"2020-04-17T06:43:33.200Z\\\", \\\"lat\\\": 60.1510438, \\\"lon\\\": 24.9159343, \\\"altMSL\\\": 7.908, \\\"eph\\\": 0.032, \\\"epv\\\": 0.036000000000000004, \\\"eps\\\": 0.078, \\\"track\\\": 30.501140000000003, \\\"speed\\\": 0.01, \\\"climb\\\": -0.002, \\\"pDOP\\\": 1.22, \\\"rtkmode\\\": 1}\"",
+  "Sample": null,
   "EventHubProperties": {
     "ConsumerGroupName": "$Default",
-    "EventHubName": "hubpremis02",
+    "EventHubName": "skoweueventhubpremis-iothub2streamanalytics",
     "ServiceBusNamespace": "skoweuehpremis01",
     "SharedAccessPolicyKey": null,
     "SharedAccessPolicyName": "RootManageSharedAccessKey"
