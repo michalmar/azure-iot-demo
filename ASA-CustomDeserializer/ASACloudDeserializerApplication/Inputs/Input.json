@@ -1,21 +1,21 @@
 ﻿{
-  "Sample": null,
-  "EventHubProperties": {
-    "ConsumerGroupName": "$Default",
-    "EventHubName": "skoweueventhubpremis-iothub2streamanalytics",
-    "ServiceBusNamespace": "skoweuehpremis01",
-    "SharedAccessPolicyKey": null,
-    "SharedAccessPolicyName": "RootManageSharedAccessKey"
-  },
+  "Sample": "\"{\\\"class\\\": \\\"TPV\\\", \\\"device\\\": \\\"/dev/ttyS0\\\", \\\"mode\\\": 3, \\\"time\\\": \\\"2020-04-20T11:17:16.799Z\\\", \\\"lat\\\": 60.165479399999995, \\\"lon\\\": 24.9269935, \\\"altMSL\\\": 15.366, \\\"eph\\\": 0.077, \\\"epv\\\": 0.092, \\\"eps\\\": 0.113, \\\"track\\\": 236.04940000000002, \\\"speed\\\": 0.014, \\\"climb\\\": 0.01, \\\"pDOP\\\": 1.45, \\\"rtkmode\\\": 1}\"",
+  "EventHubProperties": null,
   "BlobStorageProperties": null,
-  "IoTHubProperties": null,
+  "IoTHubProperties": {
+    "ConsumerGroupName": "$Default",
+    "IotHubNamespace": "skoweuiothubpremis01",
+    "SharedAccessPolicyKey": null,
+    "SharedAccessPolicyName": "iothubowner",
+    "EndPoint": "messages/events"
+  },
   "BlobReferenceProperties": null,
   "SqlReferenceInputInfo": null,
   "InputPartionKey": null,
   "DataSourceCredentialDomain": "5cfd2bd6-178f-4527-a06b-4b1ca3b3a169.StreamAnalyticsCredential",
   "Name": "Input",
   "Type": "Data Stream",
-  "DataSourceType": "Event Hub",
+  "DataSourceType": "IoT Hub",
   "Serialization": {
     "Encoding": null,
     "Type": "CustomClr",
