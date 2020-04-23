@@ -41,101 +41,13 @@ namespace ASADeserializer
                 var line = sr.ReadToEnd();
 
                 var val = "";
-                var err = "X";
-
-
-                /**********************************************************
-                 * Option 1 - custom parse of escaped JSON format
-                 **********************************************************/
-                var input = line.Substring(2, line.Length - 3).Replace("\\", "");
-                string[] elements = input.Split(',');
-
-                CustomEvent ce = new CustomEvent();
-
-                foreach (var el in elements)
-                {
-                    string[] parts = el.Split(':');
-                    var k = parts[0].Trim().Replace("\"", "");
-                    var v = parts[1].Trim().Replace("\"", "");
-                    //Console.WriteLine(k + " :: " + v);
-
-                    switch (k)
-                    {
-                        case "class": ce.c_class = v; break;
-                        case "device": ce.device = v; break;
-                        case "mode": ce.mode = int.Parse(v); break;
-                        case "time": ce.time = v; break;
-                        case "lat": ce.lat = double.Parse(v); break;
-                        case "lon": ce.lon = double.Parse(v); break;
-                        case "altMSL": ce.altMSL = double.Parse(v); break;
-                        case "eph": ce.eph = double.Parse(v); break;
-                        case "epv": ce.epv = double.Parse(v); break;
-                        case "eps": ce.eps = double.Parse(v); break;
-                        case "track": ce.track = double.Parse(v); break;
-                        case "speed": ce.speed = double.Parse(v); break;
-                        case "climb": ce.climb = double.Parse(v); break;
-                        case "pDOP": ce.pDOP = double.Parse(v); break;
-
-                        default:
-                            //Console.WriteLine("ERROR: " + k + " not found ");
-                            break;
-                    }
-                }
-                yield return ce;
-
-                /**********************************************************
-                 * Option 2 - parse using specialized libraries
-                 * 
-                 *      **** PREFERED ****
-                 *      *** NOT WORKING -> assemly Buffers..."
-                 **********************************************************/
-                /*
-                try
-                {
-                    val = System.Text.Json.JsonDocument.Parse(line).RootElement.ToString();
-                }
-                catch (Exception e)
-                {
-                    err += "| ERR1:" + e.Message;
-                }
+                val = System.Text.Json.JsonDocument.Parse(line).RootElement.ToString();
 
                 var jsonevent = new CustomEvent();
-                try
-                {
-                    jsonevent = JsonSerializer.Deserialize<CustomEvent>(val);
+                jsonevent = JsonSerializer.Deserialize<CustomEvent>(val);
 
-                }
-                catch (Exception e)
-                {
-                    err += "| ERR2:" + e.Message;
-                }
-                
-                // yield return jsonevent;
-
-                // only for DBG
-                // create a new CustomEvent object 
-                yield return new CustomEvent()
-                {
-                    c_class = err,
-                    device = "device",
-                    mode = 12,
-                    time = "time",
-                    lat = 1.1,
-                    lon = 1.1,
-                    altMSL = 1.1,
-                    eph = 1.1,
-                    epv = 1.1,
-                    eps = 1.1,
-                    track = 1.1,
-                    speed = 1.1,
-                    climb = 1.1,
-                    pDOP = 1.1
-
-                };*/
+                yield return jsonevent;
             }
-
-
-
         }
     }
 
